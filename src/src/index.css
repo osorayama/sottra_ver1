@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* アプリカラー変数 */
+:root {
+  --primary: #4DB6E5;
+  --bg: #F5FBFF;
+  --card: #FFFFFF;
+  --sans: system-ui, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+#root {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+}

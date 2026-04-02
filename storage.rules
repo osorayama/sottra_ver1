@@ -1,0 +1,28 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // ── ユーザーアバター ──
+    // users/{userId}/avatar.jpg など
+    match /users/{userId}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.auth.uid == userId
+                   && request.resource.size < 5 * 1024 * 1024       // 5MB以下
+                   && request.resource.contentType.matches('image/.*'); // 画像のみ
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ── ルート写真 ──
+    // routes/{userId}/{routeId}/{photoId} など
+    match /routes/{userId}/{routeId}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.auth.uid == userId
+                   && request.resource.size < 10 * 1024 * 1024      // 10MB以下
+                   && request.resource.contentType.matches('image/.*'); // 画像のみ
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

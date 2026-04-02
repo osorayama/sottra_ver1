@@ -1,0 +1,209 @@
+/* ───── 背景 ───── */
+.login-bg {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 1.5rem;
+}
+
+/* ───── カード ───── */
+.login-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  .login-card {
+    background: #1e2030;
+    color: #e2e8f0;
+  }
+}
+
+/* ───── ロゴ ───── */
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+.login-logo-icon {
+  font-size: 2rem;
+}
+.login-logo-name {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #0f2027;
+}
+@media (prefers-color-scheme: dark) {
+  .login-logo-name { color: #f1f5f9; }
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0 0 1.75rem;
+}
+
+/* ───── エラー ───── */
+.login-error {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  border-radius: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* ───── フォーム ───── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.login-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+}
+@media (prefers-color-scheme: dark) {
+  .login-field label { color: #cbd5e1; }
+}
+
+.login-field input {
+  padding: 0.625rem 0.875rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.625rem;
+  font-size: 0.95rem;
+  outline: none;
+  background: #f9fafb;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.login-field input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  .login-field input {
+    background: #2d3148;
+    border-color: #4b5563;
+    color: #f1f5f9;
+  }
+  .login-field input:focus {
+    background: #374151;
+  }
+}
+
+/* ───── ボタン ───── */
+.login-btn-primary {
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  border-radius: 0.625rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+.login-btn-primary:hover:not(:disabled) {
+  background: #1e40af;
+}
+.login-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ───── 区切り ───── */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+@media (prefers-color-scheme: dark) {
+  .login-divider::before,
+  .login-divider::after { background: #374151; }
+}
+
+/* ───── Google ───── */
+.login-btn-google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.75rem;
+  background: #fff;
+  color: #374151;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.625rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.login-btn-google:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+.login-btn-google:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+@media (prefers-color-scheme: dark) {
+  .login-btn-google {
+    background: #2d3148;
+    color: #e2e8f0;
+    border-color: #4b5563;
+  }
+  .login-btn-google:hover:not(:disabled) {
+    background: #374151;
+  }
+}
+
+/* ───── 切り替え ───── */
+.login-toggle {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 1.25rem 0 0;
+}
+.login-toggle-btn {
+  background: none;
+  border: none;
+  color: #1d4ed8;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  font-size: inherit;
+}
+.login-toggle-btn:hover {
+  text-decoration: underline;
+}
